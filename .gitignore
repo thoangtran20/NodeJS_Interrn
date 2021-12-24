@@ -2,3 +2,6 @@
 /public
 /resources
 /routes
+/db.json
+/index.js
+/package.json
