@@ -2,47 +2,32 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const morgan = require('morgan');
-const port = 4000;
+const ejs = require('ejs');
+const port = 3000;
 
+const route = require('./src/routes');
 
 // Static Directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, './src/public')));
+
+app.use(express.urlencoded({
+  extended: true
+}));
+app.use(express.json());
+
+// XMLHTTPRequest, fetch, axios 
 
 // Template engine
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'resources/views'));
+app.set('view engine','ejs');
+app.set('views', path.join(__dirname, './src/resources/views'));
+
+// Routes init
+route(app);
+
 // HTTP logger
 app.use(morgan('combined'));
 
-app.get('/home', (req, res) => {
-  res.render('pages/home');
-});
+          app.listen(port, () => {
+            console.log(`Server is listening at http://localhost:${port}`);
+          });
 
-app.get('/course', (req, res) => {
-  res.render('pages/course');
-});
-
-app.get('/teacher', (req, res) => {
-  res.render('pages/teacher');
-});
-
-app.get('/price', (req, res) => {
-  res.render('pages/price');
-});
-
-app.get('/review', (req, res) => {
-  res.render('pages/review');
-});
-
-app.get('/contact', (req, res) => {
-  res.render('pages/contact');
-});
-
-app.get('/login', (req, res) => {
-  res.render('pages/login');
-});
-
-
-app.listen(port, () => {
-  console.log(`Server is listening at http://localhost:${port}`);
-});
