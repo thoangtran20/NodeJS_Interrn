@@ -23,7 +23,7 @@ app.use(express.json());
 
 // Template engine
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, './src/resources/views'));
+app.set('views', path.join(__dirname, 'src', 'resources', 'views')); //./src/resources/views
 
 // Routes init
 route(app);
@@ -32,6 +32,6 @@ route(app);
 app.use(morgan('combined'));
 
 app.listen(port, () => {
-  console.log(`Server is listening at http://localhost:${port}`);
+  console.log(`App Development is listening at http://localhost:${port}`);
 });
 

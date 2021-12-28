@@ -33,14 +33,14 @@
       "name": "JavaScript Advanced",
       "img": "../images/course-5.svg",
       "price": "49.99$",
-      "desccription": "An advanced JavaScript course for everyone! Scope, closures, prototypes, 'this', build your own framework, and more."
+      "description": "An advanced JavaScript course for everyone! Scope, closures, prototypes, 'this', build your own framework, and more."
     },
     {
       "id": 6,
       "name": "ReactJS Basic",
       "img": "../images/course-6.svg",
       "price": "59.99$",
-      "desccription": ">Dive in and learn React.js from scratch! Learn Reactjs, Hooks, Redux, React Routing, Animations, Next.js and way more!"
+      "description": ">Dive in and learn React.js from scratch! Learn Reactjs, Hooks, Redux, React Routing, Animations, Next.js and way more!"
     }
   ],
   "user": [
